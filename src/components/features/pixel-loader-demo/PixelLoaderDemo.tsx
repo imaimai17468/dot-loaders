@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { PatternCard } from "./pattern-card/PatternCard";
 import { PatternDialog } from "./pattern-dialog/PatternDialog";
-import { PATTERN_CATEGORIES } from "@/components/features/dot-loader/animation-patterns";
+import { PATTERN_CATEGORIES } from "@/components/features/pixel-loader/animation-patterns";
 import type {
   AnimationPattern,
-  DotColor,
-} from "@/components/features/dot-loader/types";
+  PixelColor,
+} from "@/components/features/pixel-loader/types";
 
 type CategoryKey = keyof typeof PATTERN_CATEGORIES;
 
-const COLORS: Array<{ value: DotColor; label: string; bg: string }> = [
+const COLORS: Array<{ value: PixelColor; label: string; bg: string }> = [
   { value: "cyan", label: "Cyan", bg: "bg-cyan-400" },
   { value: "purple", label: "Purple", bg: "bg-purple-400" },
   { value: "green", label: "Green", bg: "bg-green-400" },
@@ -22,14 +22,14 @@ const COLORS: Array<{ value: DotColor; label: string; bg: string }> = [
   { value: "yellow", label: "Yellow", bg: "bg-yellow-400" },
 ];
 
-export function DotLoaderDemo() {
+export function PixelLoaderDemo() {
   const [selectedPattern, setSelectedPattern] =
     useState<AnimationPattern | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [activeCategories, setActiveCategories] = useState<Set<CategoryKey>>(
     new Set()
   );
-  const [selectedColor, setSelectedColor] = useState<DotColor>("cyan");
+  const [selectedColor, setSelectedColor] = useState<PixelColor>("cyan");
 
   const handlePatternClick = (pattern: AnimationPattern) => {
     setSelectedPattern(pattern);

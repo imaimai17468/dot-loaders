@@ -1,7 +1,7 @@
-import { DotLoader } from "@/components/features/dot-loader/DotLoader";
-import type { DotLoaderSize } from "@/components/features/dot-loader/types";
+import { PixelLoader } from "@/components/features/pixel-loader/PixelLoader";
+import type { PixelLoaderSize } from "@/components/features/pixel-loader/types";
 
-const SIZES: Array<{ value: DotLoaderSize; label: string; px: string }> = [
+const SIZES: Array<{ value: PixelLoaderSize; label: string; px: string }> = [
   { value: "xs", label: "xs", px: "12px" },
   { value: "sm", label: "sm", px: "15px" },
   { value: "md", label: "md", px: "18px" },
@@ -17,7 +17,7 @@ export function PropsPreview() {
         <div className="flex items-end gap-8">
           {SIZES.map(({ value, label, px }) => (
             <div key={value} className="flex flex-col items-center gap-2">
-              <DotLoader size={value} />
+              <PixelLoader size={value} />
               <div className="text-center">
                 <span className="text-xs font-medium">{label}</span>
                 <span className="text-xs text-muted-foreground ml-1">

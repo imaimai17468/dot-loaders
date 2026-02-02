@@ -7,16 +7,16 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { DotLoader } from "@/components/features/dot-loader/DotLoader";
+import { PixelLoader } from "@/components/features/pixel-loader/PixelLoader";
 import type {
   AnimationPattern,
-  DotColor,
-} from "@/components/features/dot-loader/types";
-import { ANIMATION_PATTERNS } from "@/components/features/dot-loader/animation-patterns";
+  PixelColor,
+} from "@/components/features/pixel-loader/types";
+import { ANIMATION_PATTERNS } from "@/components/features/pixel-loader/animation-patterns";
 
 interface PatternDialogProps {
   pattern: AnimationPattern | null;
-  color: DotColor;
+  color: PixelColor;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
@@ -33,7 +33,7 @@ export function PatternDialog({
 
   const info = ANIMATION_PATTERNS[pattern];
 
-  const usageCode = `<DotLoader pattern="${pattern}" color="${color}" />`;
+  const usageCode = `<PixelLoader pattern="${pattern}" color="${color}" />`;
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(usageCode);
@@ -50,7 +50,7 @@ export function PatternDialog({
         <div className="flex flex-col gap-4">
           {/* Preview */}
           <div className="flex flex-col items-center gap-3 py-6 bg-muted/30 rounded-lg">
-            <DotLoader pattern={pattern} color={color} size="lg" />
+            <PixelLoader pattern={pattern} color={color} size="lg" />
             <p className="text-sm text-muted-foreground text-center px-4">
               {info.description}
             </p>

@@ -1,12 +1,12 @@
 import { PatternCard } from "../pattern-card/PatternCard";
 import type {
   AnimationPattern,
-  DotColor,
-} from "@/components/features/dot-loader/types";
+  PixelColor,
+} from "@/components/features/pixel-loader/types";
 
 interface PatternGridProps {
   patterns: readonly AnimationPattern[];
-  color: DotColor;
+  color: PixelColor;
   onPatternClick: (pattern: AnimationPattern) => void;
 }
 

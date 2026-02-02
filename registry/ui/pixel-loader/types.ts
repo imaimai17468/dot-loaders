@@ -1,5 +1,5 @@
 /**
- * Animation pattern types for the DotLoader component.
+ * Animation pattern types for the PixelLoader component.
  * Includes 56 distinct patterns across 11 categories.
  */
 export type AnimationPattern =
@@ -38,7 +38,7 @@ export type AnimationPattern =
   | "single-column"
   | "cross-expand"
   | "random"
-  | "single-dot-center"
+  | "single-pixel-center"
   | "top-row"
   | "bottom-row"
   | "left-column"
@@ -83,9 +83,9 @@ export interface AnimationPatternDefinition {
 }
 
 /**
- * Available dot colors with automatic dark mode variants.
+ * Available pixel colors with automatic dark mode variants.
  */
-export type DotColor =
+export type PixelColor =
   | "cyan"
   | "purple"
   | "green"
@@ -96,33 +96,33 @@ export type DotColor =
   | "yellow";
 
 /**
- * Preset sizes for the DotLoader component.
- * - xs: 12px total (4px dots)
- * - sm: 15px total (5px dots)
- * - md: 18px total (6px dots)
- * - lg: 24px total (8px dots)
+ * Preset sizes for the PixelLoader component.
+ * - xs: 12px total (4px pixels)
+ * - sm: 15px total (5px pixels)
+ * - md: 18px total (6px pixels)
+ * - lg: 24px total (8px pixels)
  */
-export type DotLoaderSize = "xs" | "sm" | "md" | "lg";
+export type PixelLoaderSize = "xs" | "sm" | "md" | "lg";
 
 /**
- * Props for the DotLoader component.
+ * Props for the PixelLoader component.
  */
-export interface DotLoaderProps {
+export interface PixelLoaderProps {
   /**
    * Animation pattern to display.
    * @default "horizontal-wave"
    */
   pattern?: AnimationPattern;
   /**
-   * Color theme for the dots.
+   * Color theme for the pixels.
    * @default "cyan"
    */
-  color?: DotColor;
+  color?: PixelColor;
   /**
    * Preset size for the loader.
    * @default "md"
    */
-  size?: DotLoaderSize;
+  size?: PixelLoaderSize;
   /**
    * Additional CSS classes to apply to the container.
    */

@@ -1,13 +1,13 @@
-import { DotLoader } from "@/components/features/dot-loader/DotLoader";
+import { PixelLoader } from "@/components/features/pixel-loader/PixelLoader";
 import type {
   AnimationPattern,
-  DotColor,
-} from "@/components/features/dot-loader/types";
-import { ANIMATION_PATTERNS } from "@/components/features/dot-loader/animation-patterns";
+  PixelColor,
+} from "@/components/features/pixel-loader/types";
+import { ANIMATION_PATTERNS } from "@/components/features/pixel-loader/animation-patterns";
 
 interface PatternCardProps {
   pattern: AnimationPattern;
-  color: DotColor;
+  color: PixelColor;
   onClick: () => void;
 }
 
@@ -21,7 +21,7 @@ export function PatternCard({ pattern, color, onClick }: PatternCardProps) {
       type="button"
     >
       <div className="flex justify-center mb-4">
-        <DotLoader pattern={pattern} color={color} />
+        <PixelLoader pattern={pattern} color={color} />
       </div>
       <div className="text-center">
         <h3 className="font-medium text-xs text-foreground/80 group-hover:text-foreground transition-colors">

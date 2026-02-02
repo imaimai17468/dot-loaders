@@ -34,7 +34,7 @@ export type AnimationPattern =
   | "single-column"
   | "cross-expand"
   | "random"
-  | "single-dot-center"
+  | "single-pixel-center"
   | "top-row"
   | "bottom-row"
   | "left-column"
@@ -75,7 +75,7 @@ export interface AnimationPatternDefinition {
     | "shape";
 }
 
-export type DotColor =
+export type PixelColor =
   | "cyan"
   | "purple"
   | "green"
@@ -85,11 +85,11 @@ export type DotColor =
   | "red"
   | "yellow";
 
-export type DotLoaderSize = "xs" | "sm" | "md" | "lg";
+export type PixelLoaderSize = "xs" | "sm" | "md" | "lg";
 
-export interface DotLoaderProps {
+export interface PixelLoaderProps {
   pattern?: AnimationPattern;
-  color?: DotColor;
-  size?: DotLoaderSize;
+  color?: PixelColor;
+  size?: PixelLoaderSize;
   className?: string;
 }

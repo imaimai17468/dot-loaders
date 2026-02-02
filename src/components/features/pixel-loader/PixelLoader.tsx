@@ -2,18 +2,18 @@
 
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import type { DotLoaderProps, DotColor, DotLoaderSize } from "./types";
+import type { PixelLoaderProps, PixelColor, PixelLoaderSize } from "./types";
 import { getAnimationDelay } from "./get-animation-delay";
-import "./dot-loader.css";
+import "./pixel-loader.css";
 
-const SIZE_PRESETS: Record<DotLoaderSize, number> = {
+const SIZE_PRESETS: Record<PixelLoaderSize, number> = {
   xs: 4, // 12px total
   sm: 5, // 15px total
   md: 6, // 18px total
   lg: 8, // 24px total
 };
 
-const COLOR_CLASSES: Record<DotColor, string> = {
+const COLOR_CLASSES: Record<PixelColor, string> = {
   cyan: "bg-cyan-400 dark:bg-cyan-300",
   purple: "bg-purple-400 dark:bg-purple-300",
   green: "bg-green-400 dark:bg-green-300",
@@ -24,7 +24,7 @@ const COLOR_CLASSES: Record<DotColor, string> = {
   yellow: "bg-yellow-400 dark:bg-yellow-300",
 };
 
-const COLOR_RGB: Record<DotColor, { light: string; dark: string }> = {
+const COLOR_RGB: Record<PixelColor, { light: string; dark: string }> = {
   cyan: { light: "34 211 238", dark: "103 232 249" },
   purple: { light: "192 132 252", dark: "216 180 254" },
   green: { light: "74 222 128", dark: "134 239 172" },
@@ -35,15 +35,15 @@ const COLOR_RGB: Record<DotColor, { light: string; dark: string }> = {
   yellow: { light: "250 204 21", dark: "253 224 71" },
 };
 
-export function DotLoader({
+export function PixelLoader({
   pattern = "horizontal-wave",
   color = "cyan",
   size = "md",
   className,
-}: DotLoaderProps) {
-  const dotSize = SIZE_PRESETS[size];
+}: PixelLoaderProps) {
+  const pixelSize = SIZE_PRESETS[size];
 
-  const dots = Array.from({ length: 3 }, (_, row) =>
+  const pixels = Array.from({ length: 3 }, (_, row) =>
     Array.from({ length: 3 }, (_, col) => ({ row, col }))
   );
 
@@ -74,14 +74,18 @@ export function DotLoader({
         } as React.CSSProperties
       }
     >
-      {dots.flat().map(({ row, col }) => (
+      {pixels.flat().map(({ row, col }) => (
         <div
           key={`${row}-${col}`}
-          className={cn("dot", COLOR_CLASSES[color], row === 2 && "dot-last")}
+          className={cn(
+            "pixel",
+            COLOR_CLASSES[color],
+            row === 2 && "pixel-last"
+          )}
           style={{
-            width: `${dotSize}px`,
-            height: `${dotSize}px`,
-            animationName: "dot-wave-glow",
+            width: `${pixelSize}px`,
+            height: `${pixelSize}px`,
+            animationName: "pixel-wave-glow",
             animationDuration: "600ms",
             animationTimingFunction: "ease-in-out",
             animationIterationCount: "infinite",

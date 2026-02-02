@@ -1,6 +1,6 @@
-import { DotLoaderDemo } from "@/components/features/dot-loader-demo/DotLoaderDemo";
-import { InstallCommand } from "@/components/features/dot-loader-demo/install-command/InstallCommand";
-import { PropsPreview } from "@/components/features/dot-loader-demo/props-preview/PropsPreview";
+import { PixelLoaderDemo } from "@/components/features/pixel-loader-demo/PixelLoaderDemo";
+import { InstallCommand } from "@/components/features/pixel-loader-demo/install-command/InstallCommand";
+import { PropsPreview } from "@/components/features/pixel-loader-demo/props-preview/PropsPreview";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         </div>
 
         {/* Demo */}
-        <DotLoaderDemo />
+        <PixelLoaderDemo />
       </div>
     </main>
   );

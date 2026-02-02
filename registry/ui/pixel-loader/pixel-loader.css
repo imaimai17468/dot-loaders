@@ -1,14 +1,14 @@
-/* Dot Loader Animations */
-.dot {
+/* Pixel Loader Animations */
+.pixel {
   opacity: 0;
   box-shadow: 0 0 2px 1px rgb(var(--glow-color-light) / 0.3);
 }
 
-.dark .dot {
+.dark .pixel {
   box-shadow: 0 0 3px 1px rgb(var(--glow-color-dark) / 0.4);
 }
 
-@keyframes dot-wave-glow {
+@keyframes pixel-wave-glow {
   0%,
   25% {
     opacity: 1;
@@ -23,11 +23,11 @@
   }
 }
 
-.dot-last {
-  animation-name: dot-wave-glow-last !important;
+.pixel-last {
+  animation-name: pixel-wave-glow-last !important;
 }
 
-@keyframes dot-wave-glow-last {
+@keyframes pixel-wave-glow-last {
   0%,
   25% {
     opacity: 1;
@@ -44,7 +44,7 @@
 
 /* Accessibility: Reduce motion */
 @media (prefers-reduced-motion: reduce) {
-  .dot {
+  .pixel {
     animation: none !important;
     opacity: 0.5;
   }

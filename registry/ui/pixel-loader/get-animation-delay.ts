@@ -109,6 +109,15 @@ const EDGES_ONLY_ORDER = [
   [2, 1],
 ] as const;
 
+/**
+ * Calculates the animation delay for a pixel at the given position
+ * based on the selected animation pattern.
+ *
+ * @param pattern - The animation pattern to use
+ * @param row - Row index (0-2)
+ * @param col - Column index (0-2)
+ * @returns Delay in milliseconds. Returns 999999 for hidden pixels in partial patterns.
+ */
 export function getAnimationDelay(
   pattern: AnimationPattern,
   row: number,
@@ -254,7 +263,7 @@ export function getAnimationDelay(
     case "random":
       return 0;
 
-    case "single-dot-center":
+    case "single-pixel-center":
       return row === 1 && col === 1 ? 0 : 999999;
 
     case "top-row":

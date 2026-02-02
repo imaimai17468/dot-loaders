@@ -4,29 +4,25 @@
   "homepage": "https://dot-loaders.vercel.app",
   "items": [
     {
-      "name": "dot-loader",
+      "name": "pixel-loader",
       "type": "registry:ui",
-      "title": "Dot Loader",
-      "description": "A customizable 3x3 dot grid loading animation with 56 animation patterns and 8 color options",
+      "title": "Pixel Loader",
+      "description": "A customizable 3x3 pixel grid loading animation with 56 animation patterns and 8 color options",
       "files": [
         {
-          "path": "registry/ui/dot-loader/dot-loader.tsx",
+          "path": "registry/ui/pixel-loader/pixel-loader.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/ui/dot-loader/types.ts",
+          "path": "registry/ui/pixel-loader/types.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/ui/dot-loader/get-animation-delay.ts",
+          "path": "registry/ui/pixel-loader/get-animation-delay.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/ui/dot-loader/animation-patterns.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/ui/dot-loader/dot-loader.css",
+          "path": "registry/ui/pixel-loader/pixel-loader.css",
           "type": "registry:style"
         }
       ]

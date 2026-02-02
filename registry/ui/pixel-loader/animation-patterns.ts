@@ -253,11 +253,11 @@ export const ANIMATION_PATTERNS: Record<
     description: "Blinks in a random sequence",
     category: "special",
   },
-  "single-dot-center": {
-    key: "single-dot-center",
+  "single-pixel-center": {
+    key: "single-pixel-center",
     nameJa: "中心点のみ",
-    nameEn: "Single Dot Center",
-    description: "Only the center dot pulses",
+    nameEn: "Single Pixel Center",
+    description: "Only the center pixel pulses",
     category: "minimal",
   },
   "top-row": {
@@ -480,7 +480,7 @@ export const PATTERN_CATEGORIES = {
   minimal: {
     label: "ミニマル",
     patterns: [
-      "single-dot-center",
+      "single-pixel-center",
       "top-row",
       "bottom-row",
       "left-column",

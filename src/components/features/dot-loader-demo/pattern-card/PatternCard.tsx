@@ -1,13 +1,17 @@
 import { DotLoader } from "@/components/features/dot-loader/DotLoader";
-import type { AnimationPattern } from "@/components/features/dot-loader/types";
+import type {
+  AnimationPattern,
+  DotColor,
+} from "@/components/features/dot-loader/types";
 import { ANIMATION_PATTERNS } from "@/components/features/dot-loader/animation-patterns";
 
 interface PatternCardProps {
   pattern: AnimationPattern;
+  color: DotColor;
   onClick: () => void;
 }
 
-export function PatternCard({ pattern, onClick }: PatternCardProps) {
+export function PatternCard({ pattern, color, onClick }: PatternCardProps) {
   const info = ANIMATION_PATTERNS[pattern];
 
   return (
@@ -17,7 +21,7 @@ export function PatternCard({ pattern, onClick }: PatternCardProps) {
       type="button"
     >
       <div className="flex justify-center mb-4">
-        <DotLoader pattern={pattern} />
+        <DotLoader pattern={pattern} color={color} />
       </div>
       <div className="text-center">
         <h3 className="font-medium text-xs">{info.nameEn}</h3>

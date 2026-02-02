@@ -24,8 +24,19 @@ export interface AnimationPatternDefinition {
   category: "wave" | "diagonal" | "center" | "special";
 }
 
+export type DotColor =
+  | "cyan"
+  | "purple"
+  | "green"
+  | "orange"
+  | "pink"
+  | "blue"
+  | "red"
+  | "yellow";
+
 export interface DotLoaderProps {
   pattern?: AnimationPattern;
+  color?: DotColor;
   className?: string;
   dotSize?: number;
   gap?: number;

@@ -5,17 +5,22 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { DotLoader } from "@/components/features/dot-loader/DotLoader";
-import type { AnimationPattern } from "@/components/features/dot-loader/types";
+import type {
+  AnimationPattern,
+  DotColor,
+} from "@/components/features/dot-loader/types";
 import { ANIMATION_PATTERNS } from "@/components/features/dot-loader/animation-patterns";
 
 interface PatternDialogProps {
   pattern: AnimationPattern | null;
+  color: DotColor;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
 export function PatternDialog({
   pattern,
+  color,
   open,
   onOpenChange,
 }: PatternDialogProps) {
@@ -30,7 +35,7 @@ export function PatternDialog({
           <DialogTitle>{info.nameJa}</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col items-center gap-6 py-8">
-          <DotLoader pattern={pattern} dotSize={12} gap={4} />
+          <DotLoader pattern={pattern} color={color} dotSize={12} gap={4} />
           <div className="text-center">
             <p className="text-sm text-muted-foreground">{info.description}</p>
             <p className="text-xs text-muted-foreground mt-2">

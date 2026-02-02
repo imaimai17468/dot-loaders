@@ -2,12 +2,24 @@
 
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import type { DotLoaderProps } from "./types";
+import type { DotLoaderProps, DotColor } from "./types";
 import { getAnimationDelay } from "./get-animation-delay";
 import "./dot-loader.css";
 
+const COLOR_CLASSES: Record<DotColor, string> = {
+  cyan: "bg-cyan-400 dark:bg-cyan-300",
+  purple: "bg-purple-400 dark:bg-purple-300",
+  green: "bg-green-400 dark:bg-green-300",
+  orange: "bg-orange-400 dark:bg-orange-300",
+  pink: "bg-pink-400 dark:bg-pink-300",
+  blue: "bg-blue-400 dark:bg-blue-300",
+  red: "bg-red-400 dark:bg-red-300",
+  yellow: "bg-yellow-400 dark:bg-yellow-300",
+};
+
 export function DotLoader({
   pattern = "horizontal-wave",
+  color = "cyan",
   className,
   dotSize = 6,
   gap = 0,
@@ -42,10 +54,7 @@ export function DotLoader({
       {dots.flat().map(({ row, col }) => (
         <div
           key={`${row}-${col}`}
-          className={cn(
-            "dot bg-cyan-400 dark:bg-cyan-300",
-            row === 2 && "dot-last"
-          )}
+          className={cn("dot", COLOR_CLASSES[color], row === 2 && "dot-last")}
           style={{
             width: `${dotSize}px`,
             height: `${dotSize}px`,

@@ -4,8 +4,8 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import type * as React from "react";
 
 /**
- * アプリケーション全体のテーマ管理を提供するプロバイダーコンポーネント
- * next-themesを使用してダークモード/ライトモードの切り替えを実現
+ * Theme provider component for the entire application
+ * Uses next-themes to enable dark/light mode switching
  */
 export function ThemeProvider({
   children,

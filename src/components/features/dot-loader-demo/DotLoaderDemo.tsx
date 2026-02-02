@@ -73,7 +73,7 @@ export function DotLoaderDemo() {
           {/* Category Filter */}
           <div className="flex-1">
             <h2 className="text-sm font-medium text-muted-foreground mb-3">
-              カテゴリー
+              Category
             </h2>
             <div className="flex flex-wrap gap-2">
               {(
@@ -90,7 +90,7 @@ export function DotLoaderDemo() {
                       ? "bg-foreground text-background shadow-sm"
                       : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                   }`}
-                  aria-label={`${value.label}を表示`}
+                  aria-label={`Show ${value.label}`}
                   aria-pressed={activeCategories.has(key)}
                 >
                   {value.label}
@@ -102,7 +102,7 @@ export function DotLoaderDemo() {
           {/* Color Picker */}
           <div className="shrink-0">
             <h2 className="text-sm font-medium text-muted-foreground mb-3">
-              カラー
+              Color
             </h2>
             <div className="flex gap-3">
               {COLORS.map(({ value, label, bg }) => (

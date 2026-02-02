@@ -10,7 +10,7 @@ export const Header = () => {
             <Link href="/">Dot Loader Animation Showcase</Link>
           </h1>
           <p className="text-muted-foreground text-sm">
-            3×3グリッドの58種類のアニメーションパターン
+            56 animation patterns for 3×3 dot grid
           </p>
         </div>
         <div className="flex items-center gap-5">

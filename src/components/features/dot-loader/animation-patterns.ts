@@ -401,7 +401,7 @@ export const ANIMATION_PATTERNS: Record<
 
 export const PATTERN_CATEGORIES = {
   wave: {
-    label: "波系",
+    label: "Wave",
     patterns: [
       "horizontal-wave",
       "horizontal-wave-reverse",
@@ -414,7 +414,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   diagonal: {
-    label: "対角線系",
+    label: "Diagonal",
     patterns: [
       "diagonal-forward",
       "diagonal-backward",
@@ -423,7 +423,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   center: {
-    label: "中心系",
+    label: "Center",
     patterns: [
       "center-outward",
       "center-inward",
@@ -432,7 +432,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   corner: {
-    label: "コーナー系",
+    label: "Corner",
     patterns: [
       "corner-top-left",
       "corner-top-right",
@@ -442,7 +442,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   rotation: {
-    label: "回転系",
+    label: "Rotation",
     patterns: [
       "rotate-clockwise",
       "rotate-counterclockwise",
@@ -451,7 +451,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   complex: {
-    label: "複雑系",
+    label: "Complex",
     patterns: [
       "checkerboard-a",
       "checkerboard-b",
@@ -462,7 +462,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   special: {
-    label: "特殊",
+    label: "Special",
     patterns: [
       "single-row",
       "single-column",
@@ -471,7 +471,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   minimal: {
-    label: "ミニマル",
+    label: "Minimal",
     patterns: [
       "single-dot-center",
       "top-row",
@@ -483,7 +483,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   edge: {
-    label: "エッジ系",
+    label: "Edge",
     patterns: [
       "four-corners-only",
       "frame-wave",
@@ -492,7 +492,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   quad: {
-    label: "クアッド系",
+    label: "Quad",
     patterns: [
       "quad-top-left",
       "quad-top-right",
@@ -501,7 +501,7 @@ export const PATTERN_CATEGORIES = {
     ] as const,
   },
   shape: {
-    label: "形状系",
+    label: "Shape",
     patterns: [
       "l-shape-tl",
       "l-shape-tr",

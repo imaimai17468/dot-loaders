@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Toggle } from "@/components/ui/toggle";
 import { PatternCard } from "./pattern-card/PatternCard";
 import { PatternDialog } from "./pattern-dialog/PatternDialog";
 import { PATTERN_CATEGORIES } from "@/components/features/dot-loader/animation-patterns";

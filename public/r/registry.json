@@ -22,10 +22,6 @@
           "type": "registry:lib"
         },
         {
-          "path": "components/ui/dot-loader/animation-patterns.ts",
-          "type": "registry:lib"
-        },
-        {
           "path": "components/ui/dot-loader/dot-loader.css",
           "type": "registry:style"
         }

@@ -1,14 +1,13 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import type { DotLoaderProps } from "./types";
+import { getAnimationDelay } from "./get-animation-delay";
 import "./dot-loader.css";
 
-interface DotLoaderProps {
-  className?: string;
-  dotSize?: number;
-  gap?: number;
-  cycleDuration?: number;
-}
-
 export function DotLoader({
+  pattern = "horizontal-wave",
   className,
   dotSize = 6,
   gap = 0,
@@ -18,14 +17,25 @@ export function DotLoader({
     Array.from({ length: 3 }, (_, col) => ({ row, col }))
   );
 
-  const getAnimationDelay = (row: number) => {
-    return 150 * row; // row 0: 0ms, row 1: 150ms, row 2: 300ms
+  const [randomDelays, setRandomDelays] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (pattern === "random") {
+      setRandomDelays(Array.from({ length: 9 }, () => Math.random() * 450));
+    }
+  }, [pattern]);
+
+  const getDelay = (row: number, col: number): number => {
+    if (pattern === "random") {
+      return randomDelays[row * 3 + col] || 0;
+    }
+    return getAnimationDelay(pattern, row, col);
   };
 
   return (
     <div
       role="status"
-      aria-label="Loading"
+      aria-label={`Loading animation: ${pattern}`}
       className={cn("inline-grid grid-cols-3", className)}
       style={{ gap: `${gap}px` }}
     >
@@ -43,7 +53,7 @@ export function DotLoader({
             animationDuration: `${cycleDuration}ms`,
             animationTimingFunction: "ease-in-out",
             animationIterationCount: "infinite",
-            animationDelay: `${getAnimationDelay(row)}ms`,
+            animationDelay: `${getDelay(row, col)}ms`,
             willChange: "opacity, box-shadow",
           }}
         />

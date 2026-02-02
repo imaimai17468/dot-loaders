@@ -32,7 +32,7 @@ export function PatternDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{info.nameJa}</DialogTitle>
+          <DialogTitle>{info.nameEn}</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col items-center gap-6 py-8">
           <DotLoader pattern={pattern} color={color} dotSize={12} gap={4} />

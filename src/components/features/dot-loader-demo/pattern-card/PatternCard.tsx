@@ -16,7 +16,7 @@ export function PatternCard({ pattern, color, onClick }: PatternCardProps) {
 
   return (
     <button
-      className="rounded-lg p-4 cursor-pointer hover:bg-accent transition-colors w-full"
+      className="group relative rounded-xl p-6 cursor-pointer border border-border/50 bg-card hover:bg-accent/50 hover:border-foreground/20 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98] w-full"
       onClick={onClick}
       type="button"
     >
@@ -24,7 +24,9 @@ export function PatternCard({ pattern, color, onClick }: PatternCardProps) {
         <DotLoader pattern={pattern} color={color} />
       </div>
       <div className="text-center">
-        <h3 className="font-medium text-xs">{info.nameEn}</h3>
+        <h3 className="font-medium text-xs text-foreground/80 group-hover:text-foreground transition-colors">
+          {info.nameEn}
+        </h3>
       </div>
     </button>
   );

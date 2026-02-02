@@ -67,55 +67,71 @@ export function DotLoaderDemo() {
           .flatMap(([, value]) => value.patterns);
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="flex gap-8">
-        <aside className="w-48 shrink-0">
-          <div className="sticky top-8 space-y-6">
-            <div>
-              <h2 className="font-semibold mb-4">フィルター</h2>
-              <div className="flex flex-col gap-2">
-                {(
-                  Object.entries(PATTERN_CATEGORIES) as [
-                    CategoryKey,
-                    (typeof PATTERN_CATEGORIES)[CategoryKey],
-                  ][]
-                ).map(([key, value]) => (
-                  <Toggle
-                    key={key}
-                    pressed={activeCategories.has(key)}
-                    onPressedChange={() => handleCategoryToggle(key)}
-                    className="justify-start"
-                    aria-label={`${value.label}を表示`}
-                  >
-                    {value.label}
-                  </Toggle>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="font-semibold mb-4">カラー</h2>
-              <div className="grid grid-cols-4 gap-2">
-                {COLORS.map(({ value, label, bg }) => (
-                  <button
-                    key={value}
-                    onClick={() => setSelectedColor(value)}
-                    className={`w-8 h-8 rounded-full transition-all ${bg} ${
-                      selectedColor === value
-                        ? "ring-2 ring-offset-2 ring-offset-background ring-foreground scale-110"
-                        : "hover:scale-105"
-                    }`}
-                    aria-label={label}
-                    title={label}
-                  />
-                ))}
-              </div>
+    <div className="w-full">
+      <div className="flex flex-col gap-8">
+        {/* Filter & Color Controls */}
+        <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between pb-4 border-b border-border/50">
+          {/* Category Filter */}
+          <div className="flex-1">
+            <h2 className="text-sm font-medium text-muted-foreground mb-3">
+              カテゴリー
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {(
+                Object.entries(PATTERN_CATEGORIES) as [
+                  CategoryKey,
+                  (typeof PATTERN_CATEGORIES)[CategoryKey],
+                ][]
+              ).map(([key, value]) => (
+                <button
+                  key={key}
+                  onClick={() => handleCategoryToggle(key)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    activeCategories.has(key)
+                      ? "bg-foreground text-background shadow-sm"
+                      : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  }`}
+                  aria-label={`${value.label}を表示`}
+                  aria-pressed={activeCategories.has(key)}
+                >
+                  {value.label}
+                </button>
+              ))}
             </div>
           </div>
-        </aside>
 
-        <main className="flex-1">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-x-2 gap-y-4">
+          {/* Color Picker */}
+          <div className="shrink-0">
+            <h2 className="text-sm font-medium text-muted-foreground mb-3">
+              カラー
+            </h2>
+            <div className="flex gap-3">
+              {COLORS.map(({ value, label, bg }) => (
+                <button
+                  key={value}
+                  onClick={() => setSelectedColor(value)}
+                  className={`relative w-10 h-10 rounded-lg transition-all duration-200 ${bg} ${
+                    selectedColor === value
+                      ? "ring-2 ring-offset-2 ring-offset-background ring-foreground scale-110 shadow-lg"
+                      : "hover:scale-105 hover:shadow-md opacity-70 hover:opacity-100"
+                  }`}
+                  aria-label={label}
+                  title={label}
+                >
+                  {selectedColor === value && (
+                    <span className="absolute inset-0 flex items-center justify-center text-white text-lg font-bold drop-shadow-md">
+                      ✓
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Pattern Grid */}
+        <main>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {visiblePatterns.map((pattern) => (
               <PatternCard
                 key={pattern}

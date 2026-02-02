@@ -6,17 +6,14 @@ export const Header = () => {
     <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-6">
         <div>
-          <h1 className="font-medium text-2xl">
-            <Link href="/">Title</Link>
+          <h1 className="font-bold text-3xl mb-2">
+            <Link href="/">Dot Loader Animation Showcase</Link>
           </h1>
+          <p className="text-muted-foreground text-sm">
+            3×3グリッドの16種類のアニメーションパターン
+          </p>
         </div>
         <div className="flex items-center gap-5">
-          <Link href="/link1" className="text-gray-400 text-sm">
-            Link1
-          </Link>
-          <Link href="/link2" className="text-gray-400 text-sm">
-            Link2
-          </Link>
           <ModeToggle />
         </div>
       </div>

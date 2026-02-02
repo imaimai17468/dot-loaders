@@ -68,15 +68,6 @@ export function DotLoaderDemo() {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">
-          Dot Loader Animation Showcase
-        </h1>
-        <p className="text-muted-foreground">
-          3×3グリッドの16種類のアニメーションパターン
-        </p>
-      </div>
-
       <div className="flex gap-8">
         <aside className="w-48 shrink-0">
           <div className="sticky top-8 space-y-6">

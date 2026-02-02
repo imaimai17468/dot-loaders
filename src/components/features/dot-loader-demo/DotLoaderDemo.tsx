@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { PatternCard } from "./pattern-card/PatternCard";
 import { PatternDialog } from "./pattern-dialog/PatternDialog";
-import { PATTERN_CATEGORIES } from "@/components/features/dot-loader/animation-patterns";
+import { PATTERN_CATEGORIES } from "@/components/ui/dot-loader/animation-patterns";
 import type {
   AnimationPattern,
   DotColor,
-} from "@/components/features/dot-loader/types";
+} from "@/components/ui/dot-loader/types";
 
 type CategoryKey = keyof typeof PATTERN_CATEGORIES;
 

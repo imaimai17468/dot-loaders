@@ -1,0 +1,51 @@
+/* Dot Loader Animations */
+.dot {
+  opacity: 0;
+  box-shadow: 0 0 2px 1px rgb(var(--glow-color-light) / 0.3);
+}
+
+.dark .dot {
+  box-shadow: 0 0 3px 1px rgb(var(--glow-color-dark) / 0.4);
+}
+
+@keyframes dot-wave-glow {
+  0%,
+  25% {
+    opacity: 1;
+  }
+  25.01%,
+  50% {
+    opacity: 0.33;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot-last {
+  animation-name: dot-wave-glow-last !important;
+}
+
+@keyframes dot-wave-glow-last {
+  0%,
+  25% {
+    opacity: 1;
+  }
+  25.01%,
+  50% {
+    opacity: 0.33;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none !important;
+    opacity: 0.5;
+  }
+}

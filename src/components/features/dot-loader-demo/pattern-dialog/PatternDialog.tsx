@@ -4,12 +4,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { DotLoader } from "@/components/features/dot-loader/DotLoader";
+import { DotLoader } from "@/components/ui/dot-loader/dot-loader";
 import type {
   AnimationPattern,
   DotColor,
-} from "@/components/features/dot-loader/types";
-import { ANIMATION_PATTERNS } from "@/components/features/dot-loader/animation-patterns";
+} from "@/components/ui/dot-loader/types";
+import { ANIMATION_PATTERNS } from "@/components/ui/dot-loader/animation-patterns";
 
 interface PatternDialogProps {
   pattern: AnimationPattern | null;

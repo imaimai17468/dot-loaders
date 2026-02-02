@@ -46,8 +46,6 @@ export type AnimationPattern =
   | "frame-wave"
   | "frame-bounce"
   | "edges-only"
-  | "top-edge"
-  | "bottom-edge"
   | "quad-top-left"
   | "quad-top-right"
   | "quad-bottom-left"

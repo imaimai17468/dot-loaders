@@ -313,12 +313,6 @@ export function getAnimationDelay(
       return index !== -1 ? index * 100 : 999999;
     }
 
-    case "top-edge":
-      return row === 0 ? col * 100 : 999999;
-
-    case "bottom-edge":
-      return row === 2 ? col * 100 : 999999;
-
     case "quad-top-left":
       return row <= 1 && col <= 1 ? (row + col) * 100 : 999999;
 

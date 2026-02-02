@@ -334,20 +334,6 @@ export const ANIMATION_PATTERNS: Record<
     description: "Only the middle dots of each edge",
     category: "edge",
   },
-  "top-edge": {
-    key: "top-edge",
-    nameJa: "上辺波",
-    nameEn: "Top Edge",
-    description: "Top edge three dots wave horizontally",
-    category: "edge",
-  },
-  "bottom-edge": {
-    key: "bottom-edge",
-    nameJa: "下辺波",
-    nameEn: "Bottom Edge",
-    description: "Bottom edge three dots wave horizontally",
-    category: "edge",
-  },
   "quad-top-left": {
     key: "quad-top-left",
     nameJa: "左上クアッド",
@@ -518,8 +504,6 @@ export const PATTERN_CATEGORIES = {
       "frame-wave",
       "frame-bounce",
       "edges-only",
-      "top-edge",
-      "bottom-edge",
     ] as const,
   },
   quad: {

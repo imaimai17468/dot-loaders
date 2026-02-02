@@ -16,7 +16,7 @@ export function PatternCard({ pattern, color, onClick }: PatternCardProps) {
 
   return (
     <button
-      className="group relative rounded-xl p-6 cursor-pointer border border-border/50 bg-card hover:bg-accent/50 hover:border-foreground/20 transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98] w-full"
+      className="group relative rounded-xl p-6 cursor-pointer transition-all duration-200 hover:scale-[1.05] active:scale-[0.98] w-full"
       onClick={onClick}
       type="button"
     >

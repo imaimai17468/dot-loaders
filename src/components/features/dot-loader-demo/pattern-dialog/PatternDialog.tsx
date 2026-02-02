@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -24,24 +27,52 @@ export function PatternDialog({
   open,
   onOpenChange,
 }: PatternDialogProps) {
+  const [copied, setCopied] = useState(false);
+
   if (!pattern) return null;
 
   const info = ANIMATION_PATTERNS[pattern];
 
+  const usageCode = `<DotLoader pattern="${pattern}" color="${color}" />`;
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(usageCode);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent>
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{info.nameEn}</DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col items-center gap-6 py-8">
-          <DotLoader pattern={pattern} color={color} dotSize={12} gap={4} />
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground">{info.description}</p>
-            <p className="text-xs text-muted-foreground mt-2">
-              Pattern:{" "}
-              <code className="bg-muted px-1 py-0.5 rounded">{pattern}</code>
+        <div className="flex flex-col gap-4">
+          {/* Preview */}
+          <div className="flex flex-col items-center gap-3 py-6 bg-muted/30 rounded-lg">
+            <DotLoader pattern={pattern} color={color} dotSize={12} gap={4} />
+            <p className="text-sm text-muted-foreground text-center px-4">
+              {info.description}
             </p>
+          </div>
+
+          {/* Usage */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-medium text-muted-foreground">
+                Usage
+              </span>
+              <button
+                onClick={handleCopy}
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                type="button"
+              >
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
+            <pre className="bg-muted p-3 rounded-lg text-xs overflow-x-auto">
+              <code>{usageCode}</code>
+            </pre>
           </div>
         </div>
       </DialogContent>

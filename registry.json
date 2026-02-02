@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "dot-loaders",
+  "homepage": "https://dot-loaders.vercel.app",
+  "items": [
+    {
+      "name": "dot-loader",
+      "type": "registry:ui",
+      "title": "Dot Loader",
+      "description": "A customizable 3x3 dot grid loading animation with 56 animation patterns and 8 color options",
+      "files": [
+        {
+          "path": "registry/ui/dot-loader/dot-loader.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/dot-loader/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/ui/dot-loader/get-animation-delay.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/ui/dot-loader/animation-patterns.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/ui/dot-loader/dot-loader.css",
+          "type": "registry:style"
+        }
+      ]
+    }
+  ]
+}

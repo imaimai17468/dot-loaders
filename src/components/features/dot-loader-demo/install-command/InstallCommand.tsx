@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const INSTALL_COMMAND =
-  "npx shadcn@latest add https://dot-loaders.vercel.app/registry/dot-loader.json";
+  "npx shadcn@latest add https://dot-loaders.vercel.app/r/dot-loader.json";
 
 export function InstallCommand() {
   const [copied, setCopied] = useState(false);

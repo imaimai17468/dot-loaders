@@ -96,6 +96,15 @@ export type DotColor =
   | "yellow";
 
 /**
+ * Preset sizes for the DotLoader component.
+ * - xs: 12px total (4px dots)
+ * - sm: 15px total (5px dots)
+ * - md: 18px total (6px dots)
+ * - lg: 24px total (8px dots)
+ */
+export type DotLoaderSize = "xs" | "sm" | "md" | "lg";
+
+/**
  * Props for the DotLoader component.
  */
 export interface DotLoaderProps {
@@ -110,22 +119,12 @@ export interface DotLoaderProps {
    */
   color?: DotColor;
   /**
+   * Preset size for the loader.
+   * @default "md"
+   */
+  size?: DotLoaderSize;
+  /**
    * Additional CSS classes to apply to the container.
    */
   className?: string;
-  /**
-   * Size of each dot in pixels.
-   * @default 6
-   */
-  dotSize?: number;
-  /**
-   * Gap between dots in pixels.
-   * @default 0
-   */
-  gap?: number;
-  /**
-   * Duration of one complete animation cycle in milliseconds.
-   * @default 600
-   */
-  cycleDuration?: number;
 }

@@ -6,7 +6,7 @@ A customizable 3×3 dot grid loading animation component with 56 distinct animat
 
 - ✨ **56 Animation Patterns** across 11 categories
 - 🎨 **8 Color Options** with automatic dark mode variants
-- ⚙️ **Fully Customizable** dot size, gap, and cycle duration
+- 📐 **4 Preset Sizes** xs (12px), sm (15px), md (18px), lg (24px)
 - ♿ **Accessibility Built-in** respects `prefers-reduced-motion`
 - 📦 **Zero Dependencies** no external UI library required
 - 🌙 **Dark Mode Ready** automatic color adaptation
@@ -42,17 +42,13 @@ export default function LoadingPage() {
 <DotLoader color="purple" />
 ```
 
-### Fully Customized
+### With Preset Size
 
 ```tsx
-<DotLoader
-  pattern="horizontal-wave"
-  color="cyan"
-  dotSize={8}
-  gap={4}
-  cycleDuration={800}
-  className="my-4"
-/>
+<DotLoader size="xs" />  {/* 12px */}
+<DotLoader size="sm" />  {/* 15px */}
+<DotLoader size="md" />  {/* 18px - default */}
+<DotLoader size="lg" />  {/* 24px */}
 ```
 
 ## Props
@@ -61,10 +57,8 @@ export default function LoadingPage() {
 |------|------|---------|-------------|
 | `pattern` | `AnimationPattern` | `"horizontal-wave"` | Animation pattern to display (56 options) |
 | `color` | `DotColor` | `"cyan"` | Color theme for dots (8 options) |
-| `dotSize` | `number` | `6` | Size of each dot in pixels |
-| `gap` | `number` | `0` | Gap between dots in pixels |
-| `cycleDuration` | `number` | `600` | Duration of one animation cycle in milliseconds |
-| `className` | `string` | `undefined` | Additional CSS classes for the container |
+| `size` | `"xs" \| "sm" \| "md" \| "lg"` | `"md"` | Preset size (12px, 15px, 18px, 24px) |
+| `className` | `string` | - | Additional CSS classes for the container |
 
 ## Animation Patterns
 

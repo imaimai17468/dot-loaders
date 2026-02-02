@@ -85,11 +85,11 @@ export type DotColor =
   | "red"
   | "yellow";
 
+export type DotLoaderSize = "xs" | "sm" | "md" | "lg";
+
 export interface DotLoaderProps {
   pattern?: AnimationPattern;
   color?: DotColor;
+  size?: DotLoaderSize;
   className?: string;
-  dotSize?: number;
-  gap?: number;
-  cycleDuration?: number;
 }

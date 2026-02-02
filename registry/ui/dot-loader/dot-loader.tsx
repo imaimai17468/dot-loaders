@@ -2,9 +2,16 @@
 
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import type { DotLoaderProps, DotColor } from "./types";
+import type { DotLoaderProps, DotColor, DotLoaderSize } from "./types";
 import { getAnimationDelay } from "./get-animation-delay";
 import "./dot-loader.css";
+
+const SIZE_PRESETS: Record<DotLoaderSize, number> = {
+  xs: 4, // 12px total
+  sm: 5, // 15px total
+  md: 6, // 18px total
+  lg: 8, // 24px total
+};
 
 const COLOR_CLASSES: Record<DotColor, string> = {
   cyan: "bg-cyan-400 dark:bg-cyan-300",
@@ -32,9 +39,9 @@ const COLOR_RGB: Record<DotColor, { light: string; dark: string }> = {
  * A customizable 3×3 dot grid loading animation component.
  *
  * Features:
- * - 58 distinct animation patterns across 11 categories
+ * - 56 distinct animation patterns across 11 categories
  * - 8 color options with automatic dark mode variants
- * - Fully customizable dot size, spacing, and timing
+ * - 4 preset sizes (xs, sm, md, lg) for common use cases
  * - Built-in accessibility support for reduced motion
  * - Zero external UI dependencies
  *
@@ -43,27 +50,21 @@ const COLOR_RGB: Record<DotColor, { light: string; dark: string }> = {
  * // Basic usage
  * <DotLoader />
  *
- * // With custom pattern and color
- * <DotLoader pattern="spiral-clockwise" color="purple" />
+ * // With preset size
+ * <DotLoader size="sm" />
  *
- * // Fully customized
- * <DotLoader
- *   pattern="horizontal-wave"
- *   color="cyan"
- *   dotSize={8}
- *   gap={4}
- *   cycleDuration={800}
- * />
+ * // With custom pattern and color
+ * <DotLoader pattern="spiral-clockwise" color="purple" size="lg" />
  * ```
  */
 export function DotLoader({
   pattern = "horizontal-wave",
   color = "cyan",
+  size = "md",
   className,
-  dotSize = 6,
-  gap = 0,
-  cycleDuration = 600,
 }: DotLoaderProps) {
+  const dotSize = SIZE_PRESETS[size];
+
   const dots = Array.from({ length: 3 }, (_, row) =>
     Array.from({ length: 3 }, (_, col) => ({ row, col }))
   );
@@ -90,7 +91,6 @@ export function DotLoader({
       className={cn("inline-grid grid-cols-3", className)}
       style={
         {
-          gap: `${gap}px`,
           "--glow-color-light": COLOR_RGB[color].light,
           "--glow-color-dark": COLOR_RGB[color].dark,
         } as React.CSSProperties
@@ -104,7 +104,7 @@ export function DotLoader({
             width: `${dotSize}px`,
             height: `${dotSize}px`,
             animationName: "dot-wave-glow",
-            animationDuration: `${cycleDuration}ms`,
+            animationDuration: "600ms",
             animationTimingFunction: "ease-in-out",
             animationIterationCount: "infinite",
             animationDelay: `${getDelay(row, col)}ms`,

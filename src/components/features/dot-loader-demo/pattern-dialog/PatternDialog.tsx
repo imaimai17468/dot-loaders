@@ -50,7 +50,7 @@ export function PatternDialog({
         <div className="flex flex-col gap-4">
           {/* Preview */}
           <div className="flex flex-col items-center gap-3 py-6 bg-muted/30 rounded-lg">
-            <DotLoader pattern={pattern} color={color} dotSize={12} gap={4} />
+            <DotLoader pattern={pattern} color={color} size="lg" />
             <p className="text-sm text-muted-foreground text-center px-4">
               {info.description}
             </p>

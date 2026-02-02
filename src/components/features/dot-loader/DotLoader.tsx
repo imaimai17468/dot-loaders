@@ -17,6 +17,17 @@ const COLOR_CLASSES: Record<DotColor, string> = {
   yellow: "bg-yellow-400 dark:bg-yellow-300",
 };
 
+const COLOR_RGB: Record<DotColor, { light: string; dark: string }> = {
+  cyan: { light: "34 211 238", dark: "103 232 249" },
+  purple: { light: "192 132 252", dark: "216 180 254" },
+  green: { light: "74 222 128", dark: "134 239 172" },
+  orange: { light: "251 146 60", dark: "253 186 116" },
+  pink: { light: "244 114 182", dark: "249 168 212" },
+  blue: { light: "96 165 250", dark: "147 197 253" },
+  red: { light: "248 113 113", dark: "252 165 165" },
+  yellow: { light: "250 204 21", dark: "253 224 71" },
+};
+
 export function DotLoader({
   pattern = "horizontal-wave",
   color = "cyan",
@@ -49,7 +60,13 @@ export function DotLoader({
       role="status"
       aria-label={`Loading animation: ${pattern}`}
       className={cn("inline-grid grid-cols-3", className)}
-      style={{ gap: `${gap}px` }}
+      style={
+        {
+          gap: `${gap}px`,
+          "--glow-color-light": COLOR_RGB[color].light,
+          "--glow-color-dark": COLOR_RGB[color].dark,
+        } as React.CSSProperties
+      }
     >
       {dots.flat().map(({ row, col }) => (
         <div

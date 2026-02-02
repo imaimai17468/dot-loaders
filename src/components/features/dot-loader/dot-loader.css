@@ -1,10 +1,10 @@
 /* Dot Loader Animations */
 .dot {
-  box-shadow: 0 0 2px 1px rgb(34 211 238 / 0.3);
+  box-shadow: 0 0 2px 1px rgb(var(--glow-color-light) / 0.3);
 }
 
 .dark .dot {
-  box-shadow: 0 0 3px 1px rgb(103 232 249 / 0.4);
+  box-shadow: 0 0 3px 1px rgb(var(--glow-color-dark) / 0.4);
 }
 
 @keyframes dot-wave-glow {

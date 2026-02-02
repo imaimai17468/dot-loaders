@@ -34,7 +34,31 @@ export type AnimationPattern =
   | "single-row"
   | "single-column"
   | "cross-expand"
-  | "random";
+  | "random"
+  | "single-dot-center"
+  | "top-row"
+  | "bottom-row"
+  | "left-column"
+  | "right-column"
+  | "opposite-corners-a"
+  | "opposite-corners-b"
+  | "four-corners-only"
+  | "frame-wave"
+  | "frame-bounce"
+  | "edges-only"
+  | "top-edge"
+  | "bottom-edge"
+  | "quad-top-left"
+  | "quad-top-right"
+  | "quad-bottom-left"
+  | "quad-bottom-right"
+  | "l-shape-tl"
+  | "l-shape-tr"
+  | "l-shape-bl"
+  | "l-shape-br"
+  | "t-shape-horizontal"
+  | "t-shape-vertical"
+  | "perimeter-sequential";
 
 export interface AnimationPatternDefinition {
   key: AnimationPattern;
@@ -48,7 +72,11 @@ export interface AnimationPatternDefinition {
     | "corner"
     | "rotation"
     | "complex"
-    | "special";
+    | "special"
+    | "minimal"
+    | "edge"
+    | "quad"
+    | "shape";
 }
 
 export type DotColor =

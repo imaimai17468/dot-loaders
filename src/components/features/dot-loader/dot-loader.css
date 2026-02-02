@@ -1,5 +1,6 @@
 /* Dot Loader Animations */
 .dot {
+  opacity: 0;
   box-shadow: 0 0 2px 1px rgb(var(--glow-color-light) / 0.3);
 }
 

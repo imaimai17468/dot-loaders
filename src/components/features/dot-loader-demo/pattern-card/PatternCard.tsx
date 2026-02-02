@@ -1,9 +1,9 @@
-import { DotLoader } from "@/components/ui/dot-loader/dot-loader";
+import { DotLoader } from "@/components/features/dot-loader/DotLoader";
 import type {
   AnimationPattern,
   DotColor,
-} from "@/components/ui/dot-loader/types";
-import { ANIMATION_PATTERNS } from "@/components/ui/dot-loader/animation-patterns";
+} from "@/components/features/dot-loader/types";
+import { ANIMATION_PATTERNS } from "@/components/features/dot-loader/animation-patterns";
 
 interface PatternCardProps {
   pattern: AnimationPattern;

@@ -1,10 +1,10 @@
 # DotLoader
 
-A customizable 3×3 dot grid loading animation component with 58 distinct animation patterns, 8 color options, and full dark mode support.
+A customizable 3×3 dot grid loading animation component with 56 distinct animation patterns, 8 color options, and full dark mode support.
 
 ## Features
 
-- ✨ **58 Animation Patterns** across 11 categories
+- ✨ **56 Animation Patterns** across 11 categories
 - 🎨 **8 Color Options** with automatic dark mode variants
 - ⚙️ **Fully Customizable** dot size, gap, and cycle duration
 - ♿ **Accessibility Built-in** respects `prefers-reduced-motion`
@@ -59,7 +59,7 @@ export default function LoadingPage() {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `pattern` | `AnimationPattern` | `"horizontal-wave"` | Animation pattern to display (58 options) |
+| `pattern` | `AnimationPattern` | `"horizontal-wave"` | Animation pattern to display (56 options) |
 | `color` | `DotColor` | `"cyan"` | Color theme for dots (8 options) |
 | `dotSize` | `number` | `6` | Size of each dot in pixels |
 | `gap` | `number` | `0` | Gap between dots in pixels |
@@ -124,7 +124,6 @@ Circular and rotating motion patterns.
 ```tsx
 <DotLoader pattern="rotate-clockwise" />
 <DotLoader pattern="rotate-counterclockwise" />
-<DotLoader pattern="orbit-outer" />
 <DotLoader pattern="cross-rotate" />
 <DotLoader pattern="pinwheel" />
 ```
@@ -200,7 +199,6 @@ L-shapes, T-shapes, and perimeter patterns.
 <DotLoader pattern="l-shape-br" />
 <DotLoader pattern="t-shape-horizontal" />
 <DotLoader pattern="t-shape-vertical" />
-<DotLoader pattern="perimeter-sequential" />
 ```
 
 ## Color Options

@@ -209,13 +209,6 @@ export function getAnimationDelay(
       return index * 75;
     }
 
-    case "orbit-outer": {
-      const index = ORBIT_OUTER_ORDER.findIndex(
-        ([r, c]) => r === row && c === col
-      );
-      return index !== -1 ? index * 75 : 999999;
-    }
-
     case "cross-rotate": {
       const index = CROSS_ROTATE_ORDER.findIndex(
         ([r, c]) => r === row && c === col
@@ -351,13 +344,6 @@ export function getAnimationDelay(
 
     case "t-shape-vertical":
       return col === 0 || row === 1 ? (col + Math.abs(row - 1)) * 100 : 999999;
-
-    case "perimeter-sequential": {
-      const index = ORBIT_OUTER_ORDER.findIndex(
-        ([r, c]) => r === row && c === col
-      );
-      return index !== -1 ? index * 75 : 999999;
-    }
 
     default:
       return row * 150;

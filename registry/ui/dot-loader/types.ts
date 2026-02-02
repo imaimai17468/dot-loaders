@@ -1,6 +1,6 @@
 /**
  * Animation pattern types for the DotLoader component.
- * Includes 58 distinct patterns across 11 categories.
+ * Includes 56 distinct patterns across 11 categories.
  */
 export type AnimationPattern =
   | "horizontal-wave"
@@ -26,7 +26,6 @@ export type AnimationPattern =
   | "corners-inward"
   | "rotate-clockwise"
   | "rotate-counterclockwise"
-  | "orbit-outer"
   | "cross-rotate"
   | "pinwheel"
   | "checkerboard-a"
@@ -59,8 +58,7 @@ export type AnimationPattern =
   | "l-shape-bl"
   | "l-shape-br"
   | "t-shape-horizontal"
-  | "t-shape-vertical"
-  | "perimeter-sequential";
+  | "t-shape-vertical";
 
 /**
  * Metadata for a single animation pattern.

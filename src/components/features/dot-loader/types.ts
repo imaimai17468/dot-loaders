@@ -22,7 +22,6 @@ export type AnimationPattern =
   | "corners-inward"
   | "rotate-clockwise"
   | "rotate-counterclockwise"
-  | "orbit-outer"
   | "cross-rotate"
   | "pinwheel"
   | "checkerboard-a"
@@ -55,8 +54,7 @@ export type AnimationPattern =
   | "l-shape-bl"
   | "l-shape-br"
   | "t-shape-horizontal"
-  | "t-shape-vertical"
-  | "perimeter-sequential";
+  | "t-shape-vertical";
 
 export interface AnimationPatternDefinition {
   key: AnimationPattern;

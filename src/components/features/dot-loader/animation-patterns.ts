@@ -165,13 +165,6 @@ export const ANIMATION_PATTERNS: Record<
     description: "Rotates around the grid counterclockwise from top",
     category: "rotation",
   },
-  "orbit-outer": {
-    key: "orbit-outer",
-    nameJa: "外周軌道",
-    nameEn: "Outer Orbit",
-    description: "Travels around the outer edge only, center hidden",
-    category: "rotation",
-  },
   "cross-rotate": {
     key: "cross-rotate",
     nameJa: "十字回転",
@@ -404,13 +397,6 @@ export const ANIMATION_PATTERNS: Record<
     description: "Rotated T (left column + center row)",
     category: "shape",
   },
-  "perimeter-sequential": {
-    key: "perimeter-sequential",
-    nameJa: "外周順次",
-    nameEn: "Perimeter Sequential",
-    description: "All 8 perimeter dots light sequentially clockwise",
-    category: "shape",
-  },
 };
 
 export const PATTERN_CATEGORIES = {
@@ -460,7 +446,6 @@ export const PATTERN_CATEGORIES = {
     patterns: [
       "rotate-clockwise",
       "rotate-counterclockwise",
-      "orbit-outer",
       "cross-rotate",
       "pinwheel",
     ] as const,
@@ -524,7 +509,6 @@ export const PATTERN_CATEGORIES = {
       "l-shape-br",
       "t-shape-horizontal",
       "t-shape-vertical",
-      "perimeter-sequential",
     ] as const,
   },
 };

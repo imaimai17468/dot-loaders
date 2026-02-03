@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const INSTALL_COMMAND =
-  "npx shadcn@latest add https://dot-loaders.vercel.app/r/pixel-loader.json";
+  "npx shadcn@latest add https://pixel-loaders.vercel.app/r/pixel-loader.json";
 
 export function InstallCommand() {
   const [copied, setCopied] = useState(false);

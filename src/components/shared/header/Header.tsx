@@ -7,10 +7,10 @@ export const Header = () => {
       <div className="flex items-center justify-between px-6 py-6">
         <div>
           <h1 className="font-bold text-3xl mb-2">
-            <Link href="/">Dot Loader Animation Showcase</Link>
+            <Link href="/">Pixel Loader Animation Showcase</Link>
           </h1>
           <p className="text-muted-foreground text-sm">
-            56 animation patterns for 3×3 dot grid
+            56 animation patterns for 3×3 pixel grid
           </p>
         </div>
         <div className="flex items-center gap-5">

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "dot-loaders",
-  "homepage": "https://dot-loaders.vercel.app",
+  "name": "pixel-loaders",
+  "homepage": "https://pixel-loaders.vercel.app",
   "items": [
     {
       "name": "pixel-loader",

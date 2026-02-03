@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+// oxlint-disable-next-line import/no-unassigned-import -- CSS side-effect import
 import "./globals.css";
 import { Header } from "@/components/shared/header/Header";
 import { ThemeProvider } from "@/components/shared/theme-provider/ThemeProvider";

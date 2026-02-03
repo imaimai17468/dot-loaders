@@ -15,8 +15,7 @@
       }
     ],
     "@typescript-eslint/no-explicit-any": "error",
-    "react/react-in-jsx-scope": "off",
-    "import/no-unassigned-import": "off"
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "jsx-a11y": {

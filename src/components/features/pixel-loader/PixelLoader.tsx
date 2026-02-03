@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import type { PixelLoaderProps, PixelColor, PixelLoaderSize } from "./types";
 import { getAnimationDelay } from "./get-animation-delay";
+// oxlint-disable-next-line import/no-unassigned-import -- CSS side-effect import
 import "./pixel-loader.css";
 
 const SIZE_PRESETS: Record<PixelLoaderSize, number> = {
